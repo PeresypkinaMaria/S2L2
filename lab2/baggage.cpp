@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "stdafx.h"
 #include <stdio.h>
 #include <sstream>
@@ -23,43 +23,43 @@ baggage::baggage()
 
 baggage baggage::ChangeBaggage(baggage &res)
 {
-	cout << "Êàêîå ïîëå âû õîòèòå èçìåíèòü?" << endl;
-	cout << "1 - Íîìåð ðåéñà" << endl;
-	cout << "2 - Äàòà âûëåòà" << endl;
-	cout << "3 - Ïóíêò íàçíà÷åíèÿ" << endl;
-	cout << "4 - Ôàìèëèÿ ïàññàæèðà" << endl;
-	cout << "5 - Êîëè÷åñòâî ìåñò áàãàæà" << endl;
-	cout << "6 - Âåñ áàãàæà" << endl;
-	cout << "0 - Îòìåíà" << endl;
+	cout << "ÐšÐ°ÐºÐ¾Ðµ Ð¿Ð¾Ð»Ðµ Ð²Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¸Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ?" << endl;
+	cout << "1 - ÐÐ¾Ð¼ÐµÑ€ Ñ€ÐµÐ¹ÑÐ°" << endl;
+	cout << "2 - Ð”Ð°Ñ‚Ð° Ð²Ñ‹Ð»ÐµÑ‚Ð°" << endl;
+	cout << "3 - ÐŸÑƒÐ½ÐºÑ‚ Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ" << endl;
+	cout << "4 - Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ Ð¿Ð°ÑÑÐ°Ð¶Ð¸Ñ€Ð°" << endl;
+	cout << "5 - ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¼ÐµÑÑ‚ Ð±Ð°Ð³Ð°Ð¶Ð°" << endl;
+	cout << "6 - Ð’ÐµÑ Ð±Ð°Ð³Ð°Ð¶Ð°" << endl;
+	cout << "0 - ÐžÑ‚Ð¼ÐµÐ½Ð°" << endl;
 	int num = InputNumber(0, 6, "");
 	switch (num)
 	{
 	case 1: 
-		res.FlightNum = InputNumber(0, 100, "Ââåäèòå íîìåð ðåéñà: ");
+		res.FlightNum = InputNumber(0, 100, "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ñ€ÐµÐ¹ÑÐ°: ");
 		break;
 	case 2:
 		res.DepDate.InputDate();
 		break;
 	case 3:
-		res.Destination = InputInformation("Ââåäèòå ïóíêò íàçíà÷åíèÿ: ");
+		res.Destination = InputInformation("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿ÑƒÐ½ÐºÑ‚ Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: ");
 		break;
 	case 4:
-		res.Surname = InputInformation("Ââåäèòå ôàìèëèþ ïàññàæèðà: ");
+		res.Surname = InputInformation("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ Ð¿Ð°ÑÑÐ°Ð¶Ð¸Ñ€Ð°: ");
 		break;
 	case 5:
-		res.NumPieces = InputNumber(0, 200, "Ââåäèòå êîëè÷åñòâî ìåñò äëÿ áàãàæà: ");
+		res.NumPieces = InputNumber(0, 200, "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¼ÐµÑÑ‚ Ð´Ð»Ñ Ð±Ð°Ð³Ð°Ð¶Ð°: ");
 		break;
 	case 6:
-		res.Weight = InputNumber(0, 100, "Ââåäèòå âåñ áàãàæà: ");
+		res.Weight = InputNumber(0, 100, "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²ÐµÑ Ð±Ð°Ð³Ð°Ð¶Ð°: ");
 		break;
 	default:
-		cout << "Âûõîä " << endl; exit(0);
+		cout << "Ð’Ñ‹Ñ…Ð¾Ð´ " << endl; exit(0);
 		break;
 	}
 	return res;
 }
 
-// ïåðåãðóæåííûé îïåðàòîð ðàâåíñòâà
+// Ð¿ÐµÑ€ÐµÐ³Ñ€ÑƒÐ¶ÐµÐ½Ð½Ñ‹Ð¹ Ð¾Ð¿ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ñ€Ð°Ð²ÐµÐ½ÑÑ‚Ð²Ð°
 baggage& baggage::operator = (baggage b)
 {
 	FlightNum = b.FlightNum;
@@ -71,38 +71,38 @@ baggage& baggage::operator = (baggage b)
 	return (*this);
 }
 
-//ââîä ñ êîíñîëè
+//Ð²Ð²Ð¾Ð´ Ñ ÐºÐ¾Ð½ÑÐ¾Ð»Ð¸
 baggage InputBaggage()
 {
 	baggage b;
-	b.FlightNum = InputNumber(0, 100, "Ââåäèòå íîìåð ðåéñà: ");
+	b.FlightNum = InputNumber(0, 100, "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ñ€ÐµÐ¹ÑÐ°: ");
 	b.DepDate.InputDate();
-	b.Destination = InputInformation("Ââåäèòå ïóíêò íàçíà÷åíèÿ: ");
-	b.Surname = InputInformation("Ââåäèòå ôàìèëèþ ïàññàæèðà: ");
-	b.NumPieces = InputNumber(0, 200, "Ââåäèòå êîëè÷åñòâî ìåñò äëÿ áàãàæà: ");
-	b.Weight = InputNumber(0, 100, "Ââåäèòå âåñ áàãàæà: ");
+	b.Destination = InputInformation("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿ÑƒÐ½ÐºÑ‚ Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: ");
+	b.Surname = InputInformation("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ Ð¿Ð°ÑÑÐ°Ð¶Ð¸Ñ€Ð°: ");
+	b.NumPieces = InputNumber(0, 200, "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¼ÐµÑÑ‚ Ð´Ð»Ñ Ð±Ð°Ð³Ð°Ð¶Ð°: ");
+	b.Weight = InputNumber(0, 100, "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²ÐµÑ Ð±Ð°Ð³Ð°Ð¶Ð°: ");
 	return b;
 }
 
-//âûâîä íà êîíñîëü
+//Ð²Ñ‹Ð²Ð¾Ð´ Ð½Ð° ÐºÐ¾Ð½ÑÐ¾Ð»ÑŒ
 void OutputBaggage(baggage b)
 {
-	cout << "Íîìåð ðåéñà: " << b.FlightNum << endl;
-	cout << "Äàòà âûëåòà: " << b.DepDate.ToString() << endl;
-	cout << "Ïóíêò íàçíà÷åíèÿ: " << b.Destination << endl;
-	cout << "Ôàìèëèÿ ïàññàæèðà: " << b.Surname << endl;
-	cout << "Êîëè÷åñòâî ìåñò äëÿ áàãàæà: " << b.NumPieces << endl;
-	cout << "Âåñ áàãàæà: " << b.Weight << endl;
+	cout << "ÐÐ¾Ð¼ÐµÑ€ Ñ€ÐµÐ¹ÑÐ°: " << b.FlightNum << endl;
+	cout << "Ð”Ð°Ñ‚Ð° Ð²Ñ‹Ð»ÐµÑ‚Ð°: " << b.DepDate.ToString() << endl;
+	cout << "ÐŸÑƒÐ½ÐºÑ‚ Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: " << b.Destination << endl;
+	cout << "Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ Ð¿Ð°ÑÑÐ°Ð¶Ð¸Ñ€Ð°: " << b.Surname << endl;
+	cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¼ÐµÑÑ‚ Ð´Ð»Ñ Ð±Ð°Ð³Ð°Ð¶Ð°: " << b.NumPieces << endl;
+	cout << "Ð’ÐµÑ Ð±Ð°Ð³Ð°Ð¶Ð°: " << b.Weight << endl;
 }
 
-//ïåðåâîä ñòðóêòóðû â ñòðîêó
+//Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´ ÑÑ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ñ‹ Ð² ÑÑ‚Ñ€Ð¾ÐºÑƒ
 string ToString(baggage b, int i)
 {
-	string result = "Çàïèñü ¹ " + to_string(i) + "\n" + "Íîìåð ðåéñà: " + to_string(b.FlightNum) + "\n" + "Äàòà âûëåòà: " + b.DepDate.ToString() + "\n" + "Ïóíêò íàçíà÷åíèÿ: " + b.Destination + "\n" + "Ôàìèëèÿ ïàññàæèðà: " + b.Surname + "\n" + "Êîëè÷åñòâî ìåñò áàãàæà: " + to_string(b.NumPieces) + "\n" + "Âåñ áàãàæà: " + to_string(b.Weight) + "\n";
+	string result = "Ð—Ð°Ð¿Ð¸ÑÑŒ â„– " + to_string(i) + "\n" + "ÐÐ¾Ð¼ÐµÑ€ Ñ€ÐµÐ¹ÑÐ°: " + to_string(b.FlightNum) + "\n" + "Ð”Ð°Ñ‚Ð° Ð²Ñ‹Ð»ÐµÑ‚Ð°: " + b.DepDate.ToString() + "\n" + "ÐŸÑƒÐ½ÐºÑ‚ Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: " + b.Destination + "\n" + "Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ Ð¿Ð°ÑÑÐ°Ð¶Ð¸Ñ€Ð°: " + b.Surname + "\n" + "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¼ÐµÑÑ‚ Ð±Ð°Ð³Ð°Ð¶Ð°: " + to_string(b.NumPieces) + "\n" + "Ð’ÐµÑ Ð±Ð°Ð³Ð°Ð¶Ð°: " + to_string(b.Weight) + "\n";
 	return result;
 }
 
-//ñ÷èòûâàåíèå baggage èç ñòðîêè
+//ÑÑ‡Ð¸Ñ‚Ñ‹Ð²Ð°ÐµÐ½Ð¸Ðµ baggage Ð¸Ð· ÑÑ‚Ñ€Ð¾ÐºÐ¸
 baggage ReadFromString(ifstream& input)
 {
 	baggage result;
@@ -116,48 +116,48 @@ baggage ReadFromString(ifstream& input)
 		if (!input.eof())
 		{
 			getline(input, s, '\n');
-			string wrd = "Íîìåð ðåéñà: ";
+			string wrd = "ÐÐ¾Ð¼ÐµÑ€ Ñ€ÐµÐ¹ÑÐ°: ";
 			result.FlightNum = atoi(s.substr(wrd.length(), s.length()).c_str());
 		}
 		if (!input.eof())
 		{
 			getline(input, s, '\n');
-			string wrd = "Äàòà âûëåòà: ";
+			string wrd = "Ð”Ð°Ñ‚Ð° Ð²Ñ‹Ð»ÐµÑ‚Ð°: ";
 			result.DepDate = result.DepDate.FromString(s.substr(wrd.length(), s.length()));
 		}
 		if (!input.eof())
 		{
 			getline(input, s, '\n');
-			string wrd = "Ïóíêò íàçíà÷åíèÿ: ";
+			string wrd = "ÐŸÑƒÐ½ÐºÑ‚ Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: ";
 			result.Destination = s.substr(wrd.length(), s.length());
 		}
 		if (!input.eof())
 		{
 			getline(input, s, '\n');
-			string wrd = "Ôàìèëèÿ ïàññàæèðà: ";
+			string wrd = "Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ Ð¿Ð°ÑÑÐ°Ð¶Ð¸Ñ€Ð°: ";
 			result.Surname = s.substr(wrd.length(), s.length());
 		}
 		if (!input.eof())
 		{
 			getline(input, s, '\n');
-			string wrd = "Êîëè÷åñòâî ìåñò áàãàæà: ";
+			string wrd = "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¼ÐµÑÑ‚ Ð±Ð°Ð³Ð°Ð¶Ð°: ";
 			result.NumPieces = atoi(s.substr(wrd.length(), s.length()).c_str());
 		}
 		if (!input.eof())
 		{
 			getline(input, s, '\n');
-			string wrd = "Âåñ áàãàæà: ";
+			string wrd = "Ð’ÐµÑ Ð±Ð°Ð³Ð°Ð¶Ð°: ";
 			result.Weight = atoi(s.substr(wrd.length(), s.length()).c_str());
 		}
 	}
 	catch (...)
 	{
-		cout << "Îøèáêà çàïèñè â ôàéë!" << endl;
+		cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð·Ð°Ð¿Ð¸ÑÐ¸ Ð² Ñ„Ð°Ð¹Ð»!" << endl;
 	}
 	return result;
 }
 
-//ïîèñê ïî êðèòåðèÿì
+//Ð¿Ð¾Ð¸ÑÐº Ð¿Ð¾ ÐºÑ€Ð¸Ñ‚ÐµÑ€Ð¸ÑÐ¼
 bool SearchInfo(baggage b1, baggage b2, int type_search)
 {
 	switch (type_search)
@@ -175,30 +175,30 @@ bool SearchInfo(baggage b1, baggage b2, int type_search)
 	}
 }
 
-//ââîä âûáðàííîãî êðèòåðèÿ
+//Ð²Ð²Ð¾Ð´ Ð²Ñ‹Ð±Ñ€Ð°Ð½Ð½Ð¾Ð³Ð¾ ÐºÑ€Ð¸Ñ‚ÐµÑ€Ð¸Ñ
 baggage InputForSearchInfo(int type_search)
 {
 	baggage bag;
 	switch (type_search)
 	{
 	case 1:
-		bag.FlightNum = InputNumber(0, 100, "Ââåäèòå íîìåð ðåéñà: ");
+		bag.FlightNum = InputNumber(0, 100, "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ñ€ÐµÐ¹ÑÐ°: ");
 		return bag;
 	case 2:
 		bag.DepDate.InputDate();
 		return bag;
 	case 3:
-		bag.Destination = InputInformation("Ââåäèòå ïóíêò íàçíà÷åíèÿ: ");
+		bag.Destination = InputInformation("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿ÑƒÐ½ÐºÑ‚ Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: ");
 		return bag;
 	case 4:
-		bag.Weight = InputNumber(0, 100, "Ââåäèòå âåñ áàãàæà: ");
+		bag.Weight = InputNumber(0, 100, "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²ÐµÑ Ð±Ð°Ð³Ð°Ð¶Ð°: ");
 	default:
 		return bag;
 	}
 }
 
-//ñðàâíåíèå ñòðóêòóð â çàâèñèìîñòè îò âûáðàííîãî ïîëÿ äëÿ ñîðòèðîâêè
-int Ñomparison(baggage b1, baggage b2, int type_search)
+//ÑÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ðµ ÑÑ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€ Ð² Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¾Ñ‚ Ð²Ñ‹Ð±Ñ€Ð°Ð½Ð½Ð¾Ð³Ð¾ Ð¿Ð¾Ð»Ñ Ð´Ð»Ñ ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ¸
+int Ð¡omparison(baggage b1, baggage b2, int type_search)
 {
 	switch (type_search)
 	{
