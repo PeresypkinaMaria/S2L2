@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <stdio.h>
 #include <sstream>
 #include <math.h>
@@ -11,70 +11,70 @@ using namespace std;
 
 class baggage {
 public:
-	int FlightNum; //номер рейса
-	MyDate DepDate; //дата вылета
-	string Destination; //пунк назначения
-	string Surname; //фамилия пассажира
-	int NumPieces; //количество мест багажа
-	int Weight; //вес багажа
+	int FlightNum; //РЅРѕРјРµСЂ СЂРµР№СЃР°
+	MyDate DepDate; //РґР°С‚Р° РІС‹Р»РµС‚Р°
+	string Destination; //РїСѓРЅРє РЅР°Р·РЅР°С‡РµРЅРёСЏ
+	string Surname; //С„Р°РјРёР»РёСЏ РїР°СЃСЃР°Р¶РёСЂР°
+	int NumPieces; //РєРѕР»РёС‡РµСЃС‚РІРѕ РјРµСЃС‚ Р±Р°РіР°Р¶Р°
+	int Weight; //РІРµСЃ Р±Р°РіР°Р¶Р°
 
-	//конструктор
+	//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	baggage();
 
-	//изменение структуры
+	//РёР·РјРµРЅРµРЅРёРµ СЃС‚СЂСѓРєС‚СѓСЂС‹
 	baggage ChangeBaggage(baggage &res);
 
-	//перегруженный оператор равенства
+	//РїРµСЂРµРіСЂСѓР¶РµРЅРЅС‹Р№ РѕРїРµСЂР°С‚РѕСЂ СЂР°РІРµРЅСЃС‚РІР°
 	baggage& operator = (baggage b);
 };
 
-//ввод с консоли
+//РІРІРѕРґ СЃ РєРѕРЅСЃРѕР»Рё
 baggage InputBaggage();
 
-//вывод на консоль
+//РІС‹РІРѕРґ РЅР° РєРѕРЅСЃРѕР»СЊ
 void OutputBaggage(baggage b);
 
-//перевод структуры в строку
+//РїРµСЂРµРІРѕРґ СЃС‚СЂСѓРєС‚СѓСЂС‹ РІ СЃС‚СЂРѕРєСѓ
 string ToString(baggage b, int i);
 
-//считывание структуры из строки
+//СЃС‡РёС‚С‹РІР°РЅРёРµ СЃС‚СЂСѓРєС‚СѓСЂС‹ РёР· СЃС‚СЂРѕРєРё
 baggage ReadFromString(ifstream& input);
 
-//поиск по выбранному критерию
+//РїРѕРёСЃРє РїРѕ РІС‹Р±СЂР°РЅРЅРѕРјСѓ РєСЂРёС‚РµСЂРёСЋ
 bool SearchInfo(baggage b1, baggage b2, int type_search);
 
-//ввод критерия сортировки в зависимости от выбранного типа
+//РІРІРѕРґ РєСЂРёС‚РµСЂРёСЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ РІС‹Р±СЂР°РЅРЅРѕРіРѕ С‚РёРїР°
 baggage InputForSearchInfo(int type_search);
 
-//сравнение структур в зависимости от выбранного поля для сортировки
-int Сomparison(baggage b1, baggage b2, int type_search);
+//СЃСЂР°РІРЅРµРЅРёРµ СЃС‚СЂСѓРєС‚СѓСЂ РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РїРѕР»СЏ РґР»СЏ СЃРѕСЂС‚РёСЂРѕРІРєРё
+int РЎomparison(baggage b1, baggage b2, int type_search);
 
 
 
 /*baggage InputBaggage()
 {
 	baggage b;
-	b.FlightNum = InputNumber(0, 100, "Введите номер рейса: ");
+	b.FlightNum = InputNumber(0, 100, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЂРµР№СЃР°: ");
 	b.DepDate.InputDate();
-	b.Destination = InputInformation("Введите пункт назначения: ");
-	b.Surname = InputInformation("Введите фамилию пассажира: ");
-	b.NumPieces = InputNumber(0, 200, "Введите количество мест для багажа: ");
-	b.Weight = InputNumber(0, 100, "Введите вес багажа: ");
+	b.Destination = InputInformation("Р’РІРµРґРёС‚Рµ РїСѓРЅРєС‚ РЅР°Р·РЅР°С‡РµРЅРёСЏ: ");
+	b.Surname = InputInformation("Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ РїР°СЃСЃР°Р¶РёСЂР°: ");
+	b.NumPieces = InputNumber(0, 200, "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РјРµСЃС‚ РґР»СЏ Р±Р°РіР°Р¶Р°: ");
+	b.Weight = InputNumber(0, 100, "Р’РІРµРґРёС‚Рµ РІРµСЃ Р±Р°РіР°Р¶Р°: ");
 	return b;
 }
 
-//вывод на консоль
+//РІС‹РІРѕРґ РЅР° РєРѕРЅСЃРѕР»СЊ
 void OutputBaggage(baggage b)
 {
-	cout << "Номер рейса: " << b.FlightNum << endl;
-	cout << "Дата вылета: " << b.DepDate.ToString() << endl;
-	cout << "Пункт назначения: " << b.Destination << endl;
-	cout << "Фамилия пассажира: " << b.Surname << endl;
-	cout << "Количество мест для багажа: " << b.NumPieces << endl;
-	cout << "Вес багажа: " << b.Weight << endl;
+	cout << "РќРѕРјРµСЂ СЂРµР№СЃР°: " << b.FlightNum << endl;
+	cout << "Р”Р°С‚Р° РІС‹Р»РµС‚Р°: " << b.DepDate.ToString() << endl;
+	cout << "РџСѓРЅРєС‚ РЅР°Р·РЅР°С‡РµРЅРёСЏ: " << b.Destination << endl;
+	cout << "Р¤Р°РјРёР»РёСЏ РїР°СЃСЃР°Р¶РёСЂР°: " << b.Surname << endl;
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РјРµСЃС‚ РґР»СЏ Р±Р°РіР°Р¶Р°: " << b.NumPieces << endl;
+	cout << "Р’РµСЃ Р±Р°РіР°Р¶Р°: " << b.Weight << endl;
 }
 
-//считывание даты из строки
+//СЃС‡РёС‚С‹РІР°РЅРёРµ РґР°С‚С‹ РёР· СЃС‚СЂРѕРєРё
 MyDate DateFromString(string str)
 {
 	MyDate date;
@@ -83,7 +83,7 @@ MyDate DateFromString(string str)
 		istringstream s(str);
 		string s1;
 		if (getline(s, s1, ' '))
-			date.day = atoi(s1.c_str()); //atoi - преобразует строку в целое число
+			date.day = atoi(s1.c_str()); //atoi - РїСЂРµРѕР±СЂР°Р·СѓРµС‚ СЃС‚СЂРѕРєСѓ РІ С†РµР»РѕРµ С‡РёСЃР»Рѕ
 		if (getline(s, s1, ' '))
 			date.month = atoi(s1.c_str());
 		if (getline(s, s1, ' '))
@@ -91,12 +91,12 @@ MyDate DateFromString(string str)
 	}
 	catch (...)
 	{
-		cout << "Ошибка записи в файл!" << endl;
+		cout << "РћС€РёР±РєР° Р·Р°РїРёСЃРё РІ С„Р°Р№Р»!" << endl;
 	}
 	return date;
 }
 
-//считываение baggage из строки
+//СЃС‡РёС‚С‹РІР°РµРЅРёРµ baggage РёР· СЃС‚СЂРѕРєРё
 baggage BagFromString(ifstream& str)
 {
 	baggage bag;
@@ -108,20 +108,20 @@ baggage BagFromString(ifstream& str)
 		if (!str.eof())
 		{
 			getline(str, s, '\n');
-			string wrd = "Номер рейса: ";
-			bag.FlightNum = atoi(s.substr(wrd.length(), s.length()).c_str()); //substr - возвращает указанное количество элементов из строки
+			string wrd = "РќРѕРјРµСЂ СЂРµР№СЃР°: ";
+			bag.FlightNum = atoi(s.substr(wrd.length(), s.length()).c_str()); //substr - РІРѕР·РІСЂР°С‰Р°РµС‚ СѓРєР°Р·Р°РЅРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РёР· СЃС‚СЂРѕРєРё
 		}
 		//if (!str.eof())
 			///////
 	}
 	catch (...)
 	{
-		cout << "Ошибка записи в файл!" << endl;
+		cout << "РћС€РёР±РєР° Р·Р°РїРёСЃРё РІ С„Р°Р№Р»!" << endl;
 	}
 	return bag;
 }
 
-//поиск по критериям
+//РїРѕРёСЃРє РїРѕ РєСЂРёС‚РµСЂРёСЏРј
 bool SearchInfo(baggage b1, baggage b2, int type_search)
 {
 	switch (type_search)
@@ -139,29 +139,29 @@ bool SearchInfo(baggage b1, baggage b2, int type_search)
 	}
 }
 
-//ввод выбранного критерия
+//РІРІРѕРґ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РєСЂРёС‚РµСЂРёСЏ
 baggage InputForSearchInfo(int type_search)
 {
 	baggage bag;
 	switch (type_search)
 	{
 	case 1:
-		bag.FlightNum = InputNumber(0, 100, "Введите номер рейса: ");
+		bag.FlightNum = InputNumber(0, 100, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЂРµР№СЃР°: ");
 		return bag;
 	case 2:
 		bag.DepDate.InputDate();
 		return bag;
 	case 3:
-		bag.Destination = InputInformation("Введите пункт назначения: ");
+		bag.Destination = InputInformation("Р’РІРµРґРёС‚Рµ РїСѓРЅРєС‚ РЅР°Р·РЅР°С‡РµРЅРёСЏ: ");
 		return bag;
 	case 4:
-		bag.Weight = InputNumber(0, 100, "Введите вес багажа: ");
+		bag.Weight = InputNumber(0, 100, "Р’РІРµРґРёС‚Рµ РІРµСЃ Р±Р°РіР°Р¶Р°: ");
 	default:
 		return bag;
 	}
 }
 
-int Сomparison(baggage b1, baggage b2, int type_search)
+int РЎomparison(baggage b1, baggage b2, int type_search)
 {
 	switch (type_search)
 	{
